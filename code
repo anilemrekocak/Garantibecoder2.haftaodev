@@ -1,0 +1,82 @@
+package org.anilemrekocak;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.printf("Hello and welcome!");
+
+        class Product{
+            private int id;
+            private String name;
+            private int price;
+
+
+        }
+
+          class Phone{
+            private int id;
+            private String name;
+            private int price;
+            private int phoneNumber;
+
+
+        }
+
+         class SmartPhone{
+            public int id;
+            public String name;
+            public Double price;
+            public String phoneNumber;
+            public int storage;
+            public int ram;
+            public int camera;
+
+            // No-arg constructor
+            public SmartPhone() {
+            }
+
+            public SmartPhone(int id, String name, Double price, String phoneNumber, int storage, int ram, int camera) {
+                this.id = id;
+                this.name = name;
+                this.price=price;
+                this.phoneNumber = phoneNumber;
+                this.storage = storage;
+                this.ram = ram;
+                this.camera = camera;
+            }
+
+
+        }
+        class PhoneApp {
+
+            public Double calculateTotalPrice(SmartPhone[] smartPhoneArray) {
+                Double total = 0.0;
+                for (SmartPhone phone : smartPhoneArray) {
+                    total += phone.price;
+                }
+
+                return total;
+            }
+
+            public void runApp() {
+                // Create 5 SmartPhone objects
+                SmartPhone phone1 = new SmartPhone(1, "iPhone 12", 35.000, "1234567890", 128, 4, 12);
+                SmartPhone phone2 = new SmartPhone(2, "Samsung Galaxy S21", 15.700, "0987654321", 256, 8, 108);
+                SmartPhone phone3 = new SmartPhone(3, "Google Pixel 6", 9.500, "1029384756", 128, 6, 12);
+                SmartPhone phone4 = new SmartPhone(4, "OnePlus 9", 7.400, "5678901234", 128, 8, 48);
+                SmartPhone phone5 = new SmartPhone(5, "Motorola Edge 20", 9.900, "4567890123", 128, 6, 108);
+
+                // Create an array and put the SmartPhone objects in it
+                SmartPhone[] phones = {phone1, phone2, phone3, phone4, phone5};
+
+                // Calculate the total price and print it
+                Double totalPrice = calculateTotalPrice(phones);
+                System.out.println("Total Price of all phones: " + totalPrice);
+            }
+        }
+
+        // Create a PhoneApp object and run the app
+        PhoneApp price = new  PhoneApp();
+        price.runApp();
+    }
+}
